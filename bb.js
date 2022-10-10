@@ -19,16 +19,18 @@ moment().tz("Asia/Tokyo").format();
         if (diff < 0 || diff > 1) {
             continue;
         }
+        if(process.env.DEBUG === "TRUE"){
+            console.log(
+                'Summary: ' + event.summary +
+                '\nDescription: ' + event.description +
+                '\nEnd Date: ' + event.end?.toISOString()
+            );
+            console.log(event);
+            console.log(moment(event.end).tz('Asia/Tokyo'));
 
-        console.log(
-            'Summary: ' + event.summary +
-            '\nDescription: ' + event.description +
-            '\nEnd Date: ' + event.end?.toISOString()
-        );
-        console.log(event);
-        console.log(moment(event.end).tz('Asia/Tokyo'));
+            console.log("残り: ", end.diff(now, "days"));
+        }
 
-        console.log("残り: ", end.diff(now, "days"));
         axios.post(process.env.DISCORD_WEBHOOK_URL, {
             "content": `${diff >= 1 ? '明日' : '**本日**'}: ${event.summary}`,
             "embeds": [
