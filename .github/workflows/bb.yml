@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm i
+      - uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Tokto"
       - run: node bb
         env:
           BB_ICS_URL: ${{ secrets.BB_ICS_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          BB_ICON_URL: ${{ secrets.BB_ICON_URL }}
