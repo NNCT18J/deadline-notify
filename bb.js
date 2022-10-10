@@ -32,7 +32,7 @@ moment().tz("Asia/Tokyo").format();
         }
 
         axios.post(process.env.DISCORD_WEBHOOK_URL, {
-            "content": `${diff >= 1 ? '明日' : '**本日**'}: ${event.summary}`,
+            "content": `${process.env.MENTIONID} ${diff >= 1 ? '明日' : '**本日**'}: ${event.summary}`,
             "embeds": [
                 {
                     "title": event.summary,
