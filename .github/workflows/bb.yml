@@ -1,3 +1,4 @@
+name: BB Notify Job
 on:
   push:
     branches:
