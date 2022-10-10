@@ -2,7 +2,7 @@ name: BB Notify Job
 'on':
   push:
     branches:
-      - main
+      - test-run
   schedule:
     - cron: '0 23 * * *' # 8:00 JST
 
