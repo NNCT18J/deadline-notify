@@ -1,5 +1,5 @@
 name: BB Notify Job
-on:
+'on':
   push:
     branches:
       - main
@@ -10,8 +10,8 @@ on:
 jobs:
   run_bb_job:
     runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - run: node bb
-          env:
-            BB_ICS_URL: ${{ secrets.BB_ICS_URL }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: node bb
+        env:
+          BB_ICS_URL: ${{ secrets.BB_ICS_URL }}
