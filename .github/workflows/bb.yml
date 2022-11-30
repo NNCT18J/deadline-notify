@@ -15,7 +15,7 @@ jobs:
       - run: npm i
       - uses: szenius/set-timezone@v1.0
         with:
-          timezoneLinux: "Asia/Tokto"
+          timezoneLinux: "Asia/Tokyo"
       - run: node bb
         env:
           BB_ICS_URL: ${{ secrets.BB_ICS_URL }}
